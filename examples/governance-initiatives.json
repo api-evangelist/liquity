@@ -1,0 +1,18 @@
+{
+  "0xD533a949740bb3306d119CC777fa900bA034cd52": {
+    "isBribeInitiative": true,
+    "bribeToken": "0xD533a949740bb3306d119CC777fa900bA034cd52"
+  },
+  "0x4e3a3754410177e6937ef1f84ea13Bb3CeAf1Ea": {
+    "isBribeInitiative": true,
+    "bribeToken": "0x4e3a3754410177e6937ef1f84ea13Bb3CeAf1Ea"
+  },
+  "0x1234567890abcdef1234567890abcdef12345678": {
+    "isBribeInitiative": false,
+    "bribeToken": null
+  },
+  "0xabcdef1234567890abcdef1234567890abcdef12": {
+    "isBribeInitiative": false,
+    "bribeToken": null
+  }
+}

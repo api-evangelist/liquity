@@ -1,0 +1,142 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "liquity": "https://api.liquity.org/vocab#",
+    "defi": "https://defiscan.live/vocab#",
+
+    "ProtocolStats": "liquity:ProtocolStats",
+    "BranchStats": "liquity:BranchStats",
+    "YieldVenue": "liquity:YieldVenue",
+    "GovernanceInitiative": "liquity:GovernanceInitiative",
+    "LeaderboardEntry": "liquity:LeaderboardEntry",
+    "BammStats": "liquity:BammStats",
+
+    "total_bold_supply": {
+      "@id": "liquity:totalBoldSupply",
+      "@type": "schema:Number"
+    },
+    "total_debt_pending": {
+      "@id": "liquity:totalDebtPending",
+      "@type": "schema:Number"
+    },
+    "total_coll_value": {
+      "@id": "liquity:totalCollateralValue",
+      "@type": "schema:Number"
+    },
+    "total_sp_deposits": {
+      "@id": "liquity:totalStabilityPoolDeposits",
+      "@type": "schema:Number"
+    },
+    "total_value_locked": {
+      "@id": "defi:totalValueLocked",
+      "@type": "schema:Number"
+    },
+    "max_sp_apy": {
+      "@id": "liquity:maxStabilityPoolApy",
+      "@type": "schema:Number"
+    },
+    "branch": {
+      "@id": "liquity:collateralBranch",
+      "@type": "@id"
+    },
+    "boldYield": {
+      "@id": "liquity:boldYieldOpportunities",
+      "@container": "@set"
+    },
+    "sBOLD": {
+      "@id": "liquity:sBoldVault",
+      "@type": "@id"
+    },
+    "yBOLD": {
+      "@id": "liquity:yBoldVault",
+      "@type": "@id"
+    },
+    "prices": {
+      "@id": "liquity:tokenPrices",
+      "@type": "@id"
+    },
+    "protocol": {
+      "@id": "schema:provider"
+    },
+    "asset": {
+      "@id": "schema:name"
+    },
+    "link": {
+      "@id": "schema:url",
+      "@type": "@id"
+    },
+    "weekly_apr": {
+      "@id": "defi:weeklyApr",
+      "@type": "schema:Number"
+    },
+    "total_apr": {
+      "@id": "defi:totalApr"
+    },
+    "tvl": {
+      "@id": "defi:totalValueLocked",
+      "@type": "schema:Number"
+    },
+    "isBribeInitiative": {
+      "@id": "liquity:isBribeInitiative",
+      "@type": "schema:Boolean"
+    },
+    "bribeToken": {
+      "@id": "liquity:bribeTokenAddress"
+    },
+    "rank": {
+      "@id": "schema:position",
+      "@type": "schema:Integer"
+    },
+    "address": {
+      "@id": "schema:identifier"
+    },
+    "points": {
+      "@id": "liquity:points",
+      "@type": "schema:Number"
+    },
+    "percent": {
+      "@id": "liquity:percentShare",
+      "@type": "schema:Number"
+    },
+    "total_row_count": {
+      "@id": "schema:numberOfItems",
+      "@type": "schema:Integer"
+    },
+    "rows": {
+      "@id": "schema:itemListElement",
+      "@container": "@set"
+    },
+    "timestamp": {
+      "@id": "schema:dateModified",
+      "@type": "schema:DateTime"
+    },
+    "bamm_debt": {
+      "@id": "liquity:bammDebt",
+      "@type": "schema:Number"
+    },
+    "bamm_apr_7d": {
+      "@id": "liquity:bammApr7d",
+      "@type": "schema:Number"
+    },
+    "bamm_apr_14d": {
+      "@id": "liquity:bammApr14d",
+      "@type": "schema:Number"
+    },
+    "bamm_apr_30d": {
+      "@id": "liquity:bammApr30d",
+      "@type": "schema:Number"
+    },
+    "collateral": {
+      "@id": "defi:collateralAsset"
+    },
+    "defi_avg_borrow_rate": {
+      "@id": "defi:avgBorrowRateDeFi",
+      "@type": "schema:Number"
+    },
+    "liquity_avg_borrow_rate": {
+      "@id": "liquity:avgBorrowRate",
+      "@type": "schema:Number"
+    }
+  }
+}

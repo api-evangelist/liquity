@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api.liquity.org/schemas/governance.json",
+  "title": "GovernanceSchemas",
+  "description": "JSON schemas for Liquity V2 governance API responses.",
+  "type": "object",
+  "$defs": {
+    "GovernanceInitiative": {
+      "type": "object",
+      "title": "GovernanceInitiative",
+      "description": "Metadata for a Liquity V2 governance initiative.",
+      "properties": {
+        "isBribeInitiative": {
+          "type": "boolean",
+          "description": "Whether this initiative uses bribe mechanisms."
+        },
+        "bribeToken": {
+          "type": ["string", "null"],
+          "description": "Ethereum token contract address used for bribes, or null if not a bribe initiative.",
+          "example": "0xD533a949740bb3306d119CC777fa900bA034cd52"
+        }
+      },
+      "required": ["isBribeInitiative", "bribeToken"]
+    },
+    "InitiativesMap": {
+      "type": "object",
+      "title": "InitiativesMap",
+      "description": "Mapping of Ethereum initiative contract addresses to governance initiative metadata.",
+      "additionalProperties": {
+        "$ref": "#/$defs/GovernanceInitiative"
+      }
+    },
+    "LatestCompletedEpoch": {
+      "type": "integer",
+      "title": "LatestCompletedEpoch",
+      "description": "Index number of the most recently completed governance epoch. Epoch cadence is weekly starting from timestamp 1746662400.",
+      "minimum": 0,
+      "example": 57
+    }
+  }
+}
