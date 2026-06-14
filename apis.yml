@@ -1,0 +1,251 @@
+name: Liquity
+description: >
+  Liquity is a decentralized borrowing protocol that allows users to draw
+  interest-free loans against Ether and liquid staking tokens as collateral.
+  The protocol (V1) issues LUSD stablecoin backed by ETH, while V2 (BOLD)
+  supports multi-collateral borrowing with WETH, wstETH, and rETH. Liquity
+  exposes a static JSON API at api.liquity.org covering circulating supplies,
+  protocol stats, stability pool data, prices, governance epochs, yield
+  opportunities, borrow rates, and a points leaderboard — all generated
+  on-chain and published as flat files to GitHub Pages.
+image: https://liquity.org/favicon.ico
+tags:
+  - DeFi
+  - Decentralized Finance
+  - Lending
+  - Stablecoin
+  - Ethereum
+  - LUSD
+  - BOLD
+  - Liquidity Protocol
+url: https://www.liquity.org/
+specificationVersion: "0.19"
+created: "2026-06-14"
+modified: "2026-06-14"
+apis:
+  - name: Liquity V1 Circulating Supply API
+    description: >
+      Provides plaintext files for LQTY token circulating supply and LUSD
+      stablecoin total supply, derived directly from on-chain contract state
+      via Ethers.js and published to GitHub Pages.
+    humanURL: https://github.com/liquity/api.liquity.org
+    baseURL: https://api.liquity.org/v1
+    tags:
+      - LUSD
+      - LQTY
+      - Supply
+      - Circulating Supply
+    properties:
+      - type: Documentation
+        url: https://github.com/liquity/api.liquity.org
+      - type: OpenAPI
+        url: https://api.liquity.org/v1/lusd_total_supply.txt
+    contact:
+      - FN: Liquity Team
+        url: https://www.liquity.org/
+    meta:
+      - type: x-api-key-required
+        value: "false"
+      - type: x-base-url
+        value: https://api.liquity.org/v1
+    endpoints:
+      - name: LUSD Total Supply
+        method: GET
+        path: /lusd_total_supply.txt
+        description: Returns the current total supply of LUSD stablecoin as a plaintext decimal number.
+      - name: LQTY Circulating Supply
+        method: GET
+        path: /lqty_circulating_supply.txt
+        description: Returns the current circulating supply of LQTY governance token as a plaintext decimal number.
+      - name: LUSD Chicken Bonds BAMM Stats
+        method: GET
+        path: /lusd_cb_bamm_stats.json
+        description: >
+          Returns JSON with BAMM (B.AMM) debt, and 7-day, 14-day, and 30-day
+          APR figures for the LUSD Chicken Bonds stability pool integration
+          with B.Protocol.
+
+  - name: Liquity V2 Protocol Stats API
+    description: >
+      Provides JSON snapshots of Liquity V2 (BOLD) protocol state including
+      total BOLD supply, collateral values, stability pool deposits, TVL,
+      per-branch (WETH/wstETH/rETH) metrics, token prices, and yield
+      opportunities. Data is refreshed on-chain and published as flat files
+      to GitHub Pages on a scheduled basis.
+    humanURL: https://github.com/liquity/api.liquity.org
+    baseURL: https://api.liquity.org/v2
+    tags:
+      - BOLD
+      - Protocol Stats
+      - TVL
+      - Stability Pool
+      - Collateral
+    properties:
+      - type: Documentation
+        url: https://github.com/liquity/api.liquity.org
+    contact:
+      - FN: Liquity Team
+        url: https://www.liquity.org/
+    meta:
+      - type: x-api-key-required
+        value: "false"
+      - type: x-base-url
+        value: https://api.liquity.org/v2
+    endpoints:
+      - name: Ethereum Protocol Stats
+        method: GET
+        path: /ethereum.json
+        description: >
+          Returns comprehensive V2 protocol stats for Ethereum mainnet including
+          total_bold_supply, total_debt_pending, total_coll_value,
+          total_sp_deposits, total_value_locked, max_sp_apy, per-collateral
+          branch data (WETH, wstETH, rETH), sBOLD and yBOLD vault metrics,
+          boldYield opportunities, and current token prices.
+      - name: Mainnet Legacy Protocol Stats
+        method: GET
+        path: /mainnet.json
+        description: >
+          Returns V2 legacy deployment stats for Ethereum mainnet with the same
+          schema as ethereum.json but scoped to the original V2 contract
+          deployment.
+      - name: Sepolia Testnet Stats
+        method: GET
+        path: /testnet/sepolia.json
+        description: Returns V2 protocol stats for the Sepolia testnet deployment.
+
+  - name: Liquity V2 Website Data API
+    description: >
+      Provides JSON data feeds used by the Liquity website including yield
+      venue listings for BOLD, protocol fork venues, points leaderboard
+      rankings, and collateral borrow rate comparisons versus DeFi averages.
+    humanURL: https://github.com/liquity/api.liquity.org
+    baseURL: https://api.liquity.org/v2/website
+    tags:
+      - BOLD
+      - Yield
+      - Borrow Rates
+      - Leaderboard
+      - DeFi
+    properties:
+      - type: Documentation
+        url: https://github.com/liquity/api.liquity.org
+    contact:
+      - FN: Liquity Team
+        url: https://www.liquity.org/
+    meta:
+      - type: x-api-key-required
+        value: "false"
+      - type: x-base-url
+        value: https://api.liquity.org/v2/website
+    endpoints:
+      - name: BOLD Yield Venues
+        method: GET
+        path: /bold-venues.json
+        description: >
+          Returns an array of yield opportunities for BOLD across DeFi protocols
+          (e.g., Euler, Yearn, Asymmetry). Each entry includes protocol name,
+          asset/vault name, link, weekly APR, total APR range, and TVL.
+      - name: Fork Venues
+        method: GET
+        path: /fork-venues.json
+        description: Returns data on Liquity protocol fork deployments and venues.
+      - name: Points Leaderboard
+        method: GET
+        path: /leaderboard.json
+        description: >
+          Returns a ranked leaderboard of Ethereum addresses by accumulated
+          Liquity points, including rank, address, points earned, and percentage
+          share. Contains up to 1,900+ entries.
+      - name: Borrow Rates Comparison
+        method: GET
+        path: /borrow-rates.json
+        description: >
+          Returns average borrow rate comparison per collateral type (WETH,
+          wstETH, rETH) between Liquity V2 and DeFi-wide averages.
+
+  - name: Liquity V2 Governance API
+    description: >
+      Provides JSON snapshots of Liquity V2 governance state including active
+      initiatives, epoch allocation data, and the latest completed governance
+      epoch number. Updated via The Graph subgraph queries on a weekly epoch
+      schedule (epoch duration 604,800 seconds).
+    humanURL: https://github.com/liquity/api.liquity.org
+    baseURL: https://api.liquity.org/v2/governance
+    tags:
+      - Governance
+      - LQTY
+      - Epoch
+      - Initiatives
+      - Voting
+    properties:
+      - type: Documentation
+        url: https://github.com/liquity/api.liquity.org
+      - type: GitHubRepository
+        url: https://github.com/liquity/V2-gov
+    contact:
+      - FN: Liquity Team
+        url: https://www.liquity.org/
+    meta:
+      - type: x-api-key-required
+        value: "false"
+      - type: x-base-url
+        value: https://api.liquity.org/v2/governance
+    endpoints:
+      - name: Governance Initiatives
+        method: GET
+        path: /initiatives.json
+        description: >
+          Returns a mapping of Ethereum addresses to governance initiative
+          metadata, including whether each address is a bribe initiative and
+          the associated bribe token address (or null).
+      - name: Latest Completed Epoch
+        method: GET
+        path: /latest_completed_epoch.json
+        description: >
+          Returns the index number of the most recently completed governance
+          epoch as a plain integer. Epoch cadence is weekly starting from
+          epoch start timestamp 1746662400.
+      - name: Epoch Allocation
+        method: GET
+        path: /allocation
+        description: >
+          Directory of per-epoch LQTY allocation snapshots used to distribute
+          governance rewards to initiative participants.
+
+common:
+  - type: TermsOfService
+    url: https://www.liquity.org/terms
+  - type: PrivacyPolicy
+    url: https://www.liquity.org/privacy
+  - type: GitHubOrganization
+    url: https://github.com/liquity
+  - type: StatusPage
+    url: https://api.liquity.org/
+  - type: Documentation
+    url: https://docs.liquity.org/
+  - type: Blog
+    url: https://www.liquity.org/blog
+  - type: Discord
+    url: https://discord.gg/2up5U32
+  - type: Twitter
+    url: https://twitter.com/LiquityProtocol
+  - type: GitHubRepository
+    url: https://github.com/liquity/dev
+  - type: GitHubRepository
+    url: https://github.com/liquity/bold
+  - type: GitHubRepository
+    url: https://github.com/liquity/api.liquity.org
+  - type: NPMPackage
+    url: https://www.npmjs.com/package/@liquity/lib-ethers
+  - type: NPMPackage
+    url: https://www.npmjs.com/package/@liquity/lib-base
+  - type: NPMPackage
+    url: https://www.npmjs.com/package/@liquity/lib-react
+  - type: NPMPackage
+    url: https://www.npmjs.com/package/@liquity/lib-subgraph
+  - type: PostmanWorkspace
+    url: https://www.postman.com/api-evangelist/liquity
+maintainers:
+  - FN: API Evangelist
+    url: https://apievangelist.com
+    email: info@apievangelist.com
