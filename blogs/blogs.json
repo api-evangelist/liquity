@@ -1,6 +1,6 @@
 {
   "url": "https://www.liquity.org/blog",
-  "fetched": "2026-06-14",
+  "fetched": "2026-06-14T20:42:17Z",
   "posts": [
     {
       "title": "Guide: Liquity V2",
@@ -122,5 +122,16 @@
       "url": "https://www.liquity.org/blog/licensing-liquity-v2-may-the-fork-be-with-you",
       "date": "2024-07-03"
     }
-  ]
+  ],
+  "repo": "liquity",
+  "feeds": [
+    {
+      "source": "https://docs.liquity.org/",
+      "feed_url": "https://docs.liquity.org/",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    }
+  ],
+  "post_count": 0
 }
