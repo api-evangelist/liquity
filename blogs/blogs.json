@@ -1,137 +1,14 @@
 {
-  "url": "https://www.liquity.org/blog",
-  "fetched": "2026-06-14T20:42:17Z",
-  "posts": [
-    {
-      "title": "Guide: Liquity V2",
-      "url": "https://www.liquity.org/blog/guide-liquity-v2",
-      "date": "2026-02-19"
-    },
-    {
-      "title": "BOLD Receives A- Rating from Bluechip",
-      "url": "https://www.liquity.org/blog/bold-receives-a--rating-from-bluechip",
-      "date": "2026-01-26"
-    },
-    {
-      "title": "Enosys Airdrop for Liquity V2 Users",
-      "url": "https://www.liquity.org/blog/enosys-airdrop-for-liquity-v2-users",
-      "date": "2026-01-19"
-    },
-    {
-      "title": "Liquity V2 Safety Mode",
-      "url": "https://www.liquity.org/blog/liquity-v2-safety-mode",
-      "date": "2025-11-05"
-    },
-    {
-      "title": "Forkonomics Update - August 2025",
-      "url": "https://www.liquity.org/blog/forkonomics-update---august-2025",
-      "date": "2025-08-15"
-    },
-    {
-      "title": "Autonomous Interest Rate Manager (ARM) for V2",
-      "url": "https://www.liquity.org/blog/autonomous-interest-manager",
-      "date": "2025-06-23"
-    },
-    {
-      "title": "Liquity Adopts the Chainlink Standard for Cross-Chain Interoperability for BOLD",
-      "url": "https://www.liquity.org/blog/liquity-adopts-the-chainlink-standard-for-cross-chain-interoperability-for-bold",
-      "date": "2025-05-20"
-    },
-    {
-      "title": "Guide to Liquity V2",
-      "url": "https://www.liquity.org/blog/guide-to-liquity-v2",
-      "date": "2025-05-19"
-    },
-    {
-      "title": "Liquity V2 is LIVE",
-      "url": "https://www.liquity.org/blog/liquity-v2-is-live",
-      "date": "2025-05-19"
-    },
-    {
-      "title": "V2 Redeployment Updates",
-      "url": "https://www.liquity.org/blog/liquity-v2-redeployment",
-      "date": "2025-02-17"
-    },
-    {
-      "title": "Bribe Markets in Liquity V2: Strategic Value for LQTY Stakers",
-      "url": "https://www.liquity.org/blog/bribe-markets-in-liquity-v2-strategic-value-for-lqty-stakers",
-      "date": "2025-02-05"
-    },
-    {
-      "title": "Voting in Liquity V2",
-      "url": "https://www.liquity.org/blog/voting-in-liquity-v2",
-      "date": "2025-01-17"
-    },
-    {
-      "title": "sBOLD - The yield-bearing DeFi savings account",
-      "url": "https://www.liquity.org/blog/sbold---the-on-chain-defi-savings-account",
-      "date": "2025-01-15"
-    },
-    {
-      "title": "A BOLD Stance",
-      "url": "https://www.liquity.org/blog/a-bold-stance",
-      "date": "2025-01-09"
-    },
-    {
-      "title": "Auditing Liquity V2",
-      "url": "https://www.liquity.org/blog/auditing-liquity-v2",
-      "date": "2024-12-20"
-    },
-    {
-      "title": "Forkonomics: Collaboration, not Competition",
-      "url": "https://www.liquity.org/blog/forkonomics-collaboration-not-competition",
-      "date": "2024-12-12"
-    },
-    {
-      "title": "Liquity V2 Testnet is LIVE on Sepolia!",
-      "url": "https://www.liquity.org/blog/liquity-v2-testnet-is-live-on-sepolia",
-      "date": "2024-11-26"
-    },
-    {
-      "title": "Using Liquity V2 on Testnet",
-      "url": "https://www.liquity.org/blog/using-liquity-v2-on-testnet",
-      "date": "2024-11-25"
-    },
-    {
-      "title": "Bootstrapping Liquity V2's Expansion",
-      "url": "https://www.liquity.org/blog/bootstrapping-liquity-v2",
-      "date": "2024-11-13"
-    },
-    {
-      "title": "Interest Rate Management in Liquity V2",
-      "url": "https://www.liquity.org/blog/interest-rate-management-in-liquity-v2",
-      "date": "2024-10-30"
-    },
-    {
-      "title": "$BOLD - DeFi's Treasury Asset",
-      "url": "https://www.liquity.org/blog/bold-defis-treasury-asset",
-      "date": "2024-09-24"
-    },
-    {
-      "title": "Directing Protocol Incentivized Liquidity with LQTY",
-      "url": "https://www.liquity.org/blog/directing-protocol-incentivized-liquidity-with-lqty",
-      "date": "2024-09-09"
-    },
-    {
-      "title": "Liquity V2: Improving DeFi with BOLD Innovation",
-      "url": "https://www.liquity.org/blog/liquity-v2-improving-defi-with-bold-innovation",
-      "date": "2024-09-04"
-    },
-    {
-      "title": "Licensing Liquity V2: May the Fork Be with You",
-      "url": "https://www.liquity.org/blog/licensing-liquity-v2-may-the-fork-be-with-you",
-      "date": "2024-07-03"
-    }
-  ],
   "repo": "liquity",
   "feeds": [
     {
-      "source": "https://docs.liquity.org/",
-      "feed_url": "https://docs.liquity.org/",
-      "title": "",
+      "source": "https://www.liquity.org/blog",
+      "feed_url": "",
       "saved": 0,
-      "method": "none"
+      "method": "agent-scrape"
     }
   ],
-  "post_count": 0
+  "fetched": "2026-06-27T12:51:50Z",
+  "post_count": 0,
+  "agent_pulled": "2026-06-27"
 }
