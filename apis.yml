@@ -213,6 +213,8 @@ apis:
           governance rewards to initiative participants.
 
 common:
+  - type: DomainSecurity
+    url: security/liquity-domain-security.yml
   - type: TermsOfService
     url: https://www.liquity.org/terms
   - type: PrivacyPolicy
