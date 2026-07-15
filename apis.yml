@@ -213,6 +213,8 @@ apis:
           governance rewards to initiative participants.
 
 common:
+  - type: AgenticAccess
+    url: agentic-access/liquity-agentic-access.yml
   - type: DomainSecurity
     url: security/liquity-domain-security.yml
   - type: TermsOfService
