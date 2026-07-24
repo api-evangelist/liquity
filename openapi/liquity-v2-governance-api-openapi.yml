@@ -1,0 +1,86 @@
+openapi: 3.1.0
+info:
+  title: Liquity Protocol V1 Supply V2 Governance API
+  description: 'The Liquity static JSON API at api.liquity.org covers circulating supplies, protocol stats, stability pool data, prices, governance epochs, yield opportunities, borrow rates, and a points leaderboard. Data is generated on-chain and published as flat files to GitHub Pages. Liquity V1 issues LUSD stablecoin backed by ETH. Liquity V2 (BOLD) supports multi-collateral borrowing with WETH, wstETH, and rETH.
+
+    '
+  version: 1.0.0
+  contact:
+    name: Liquity Team
+    url: https://www.liquity.org/
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+  termsOfService: https://www.liquity.org/terms
+servers:
+- url: https://api.liquity.org
+  description: Liquity API (GitHub Pages)
+tags:
+- name: V2 Governance
+  description: Liquity V2 governance state including initiatives and epoch data.
+paths:
+  /v2/governance/initiatives.json:
+    get:
+      operationId: getGovernanceInitiatives
+      summary: Governance Initiatives
+      description: 'Returns a mapping of Ethereum addresses to governance initiative metadata, including whether each address is a bribe initiative and the associated bribe token address (or null).
+
+        '
+      tags:
+      - V2 Governance
+      responses:
+        '200':
+          description: Map of governance initiative addresses to metadata.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  $ref: '#/components/schemas/GovernanceInitiative'
+              example:
+                '0xD533a949740bb3306d119CC777fa900bA034cd52':
+                  isBribeInitiative: true
+                  bribeToken: '0xD533a949740bb3306d119CC777fa900bA034cd52'
+                '0x1234567890abcdef1234567890abcdef12345678':
+                  isBribeInitiative: false
+                  bribeToken: null
+  /v2/governance/latest_completed_epoch.json:
+    get:
+      operationId: getLatestCompletedEpoch
+      summary: Latest Completed Epoch
+      description: 'Returns the index number of the most recently completed governance epoch as a plain integer. Epoch cadence is weekly starting from epoch start timestamp 1746662400.
+
+        '
+      tags:
+      - V2 Governance
+      responses:
+        '200':
+          description: Latest completed governance epoch index.
+          content:
+            application/json:
+              schema:
+                type: integer
+                description: The index of the most recently completed governance epoch.
+                example: 57
+components:
+  schemas:
+    GovernanceInitiative:
+      type: object
+      description: Metadata for a Liquity V2 governance initiative.
+      properties:
+        isBribeInitiative:
+          type: boolean
+          description: Whether this initiative uses bribe mechanisms.
+          example: true
+        bribeToken:
+          type:
+          - string
+          - 'null'
+          description: Ethereum token address used for bribes, or null if not a bribe initiative.
+          example: '0xD533a949740bb3306d119CC777fa900bA034cd52'
+      required:
+      - isBribeInitiative
+      - bribeToken
+externalDocs:
+  description: Liquity API GitHub Repository
+  url: https://github.com/liquity/api.liquity.org

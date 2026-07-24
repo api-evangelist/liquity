@@ -1,0 +1,116 @@
+openapi: 3.1.0
+info:
+  title: Liquity Protocol V1 Supply API
+  description: 'The Liquity static JSON API at api.liquity.org covers circulating supplies, protocol stats, stability pool data, prices, governance epochs, yield opportunities, borrow rates, and a points leaderboard. Data is generated on-chain and published as flat files to GitHub Pages. Liquity V1 issues LUSD stablecoin backed by ETH. Liquity V2 (BOLD) supports multi-collateral borrowing with WETH, wstETH, and rETH.
+
+    '
+  version: 1.0.0
+  contact:
+    name: Liquity Team
+    url: https://www.liquity.org/
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+  termsOfService: https://www.liquity.org/terms
+servers:
+- url: https://api.liquity.org
+  description: Liquity API (GitHub Pages)
+tags:
+- name: V1 Supply
+  description: Liquity V1 circulating supply and BAMM stats endpoints.
+paths:
+  /v1/lusd_total_supply.txt:
+    get:
+      operationId: getLusdTotalSupply
+      summary: LUSD Total Supply
+      description: 'Returns the current total supply of LUSD stablecoin as a plaintext decimal number, derived from on-chain contract state via Ethers.js.
+
+        '
+      tags:
+      - V1 Supply
+      responses:
+        '200':
+          description: LUSD total supply as a plaintext number.
+          content:
+            text/plain:
+              schema:
+                type: string
+                description: Decimal numeric string representing total LUSD supply.
+                example: '142857123456789000000000000'
+  /v1/lqty_circulating_supply.txt:
+    get:
+      operationId: getLqtyCirculatingSupply
+      summary: LQTY Circulating Supply
+      description: 'Returns the current circulating supply of LQTY governance token as a plaintext decimal number.
+
+        '
+      tags:
+      - V1 Supply
+      responses:
+        '200':
+          description: LQTY circulating supply as a plaintext number.
+          content:
+            text/plain:
+              schema:
+                type: string
+                description: Decimal numeric string representing LQTY circulating supply.
+                example: '85000000000000000000000000'
+  /v1/lusd_cb_bamm_stats.json:
+    get:
+      operationId: getLusdChickenBondsBammStats
+      summary: LUSD Chicken Bonds BAMM Stats
+      description: 'Returns JSON with BAMM (B.AMM) debt and 7-day, 14-day, and 30-day APR figures for the LUSD Chicken Bonds stability pool integration with B.Protocol.
+
+        '
+      tags:
+      - V1 Supply
+      responses:
+        '200':
+          description: LUSD Chicken Bonds BAMM statistics.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BammStats'
+              example:
+                timestamp: '2025-08-29T05:00:00Z'
+                bamm_debt: 1525216.022184752
+                bamm_apr_7d: 0
+                bamm_apr_14d: 0
+                bamm_apr_30d: 0
+components:
+  schemas:
+    BammStats:
+      type: object
+      description: BAMM stability pool statistics for LUSD Chicken Bonds.
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+          description: ISO 8601 timestamp when metrics were captured.
+          example: '2025-08-29T05:00:00Z'
+        bamm_debt:
+          type: number
+          format: double
+          description: Outstanding BAMM debt amount.
+          example: 1525216.022184752
+        bamm_apr_7d:
+          type: number
+          description: 7-day annualized percentage rate for BAMM.
+          example: 0
+        bamm_apr_14d:
+          type: number
+          description: 14-day annualized percentage rate for BAMM.
+          example: 0
+        bamm_apr_30d:
+          type: number
+          description: 30-day annualized percentage rate for BAMM.
+          example: 0
+      required:
+      - timestamp
+      - bamm_debt
+      - bamm_apr_7d
+      - bamm_apr_14d
+      - bamm_apr_30d
+externalDocs:
+  description: Liquity API GitHub Repository
+  url: https://github.com/liquity/api.liquity.org

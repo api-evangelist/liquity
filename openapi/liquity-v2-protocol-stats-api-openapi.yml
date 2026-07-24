@@ -1,0 +1,214 @@
+openapi: 3.1.0
+info:
+  title: Liquity Protocol V1 Supply V2 Protocol Stats API
+  description: 'The Liquity static JSON API at api.liquity.org covers circulating supplies, protocol stats, stability pool data, prices, governance epochs, yield opportunities, borrow rates, and a points leaderboard. Data is generated on-chain and published as flat files to GitHub Pages. Liquity V1 issues LUSD stablecoin backed by ETH. Liquity V2 (BOLD) supports multi-collateral borrowing with WETH, wstETH, and rETH.
+
+    '
+  version: 1.0.0
+  contact:
+    name: Liquity Team
+    url: https://www.liquity.org/
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+  termsOfService: https://www.liquity.org/terms
+servers:
+- url: https://api.liquity.org
+  description: Liquity API (GitHub Pages)
+tags:
+- name: V2 Protocol Stats
+  description: Liquity V2 (BOLD) protocol state snapshots for mainnet and testnet.
+paths:
+  /v2/ethereum.json:
+    get:
+      operationId: getEthereumProtocolStats
+      summary: Ethereum Protocol Stats
+      description: 'Returns comprehensive V2 (BOLD) protocol stats for Ethereum mainnet including total_bold_supply, total_debt_pending, total_coll_value, total_sp_deposits, total_value_locked, max_sp_apy, per-collateral branch data (WETH, wstETH, rETH), sBOLD and yBOLD vault metrics, boldYield opportunities, and current token prices.
+
+        '
+      tags:
+      - V2 Protocol Stats
+      responses:
+        '200':
+          description: Ethereum mainnet V2 protocol stats.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProtocolStats'
+  /v2/mainnet.json:
+    get:
+      operationId: getMainnetProtocolStats
+      summary: Mainnet Legacy Protocol Stats
+      description: 'Returns V2 legacy deployment stats for Ethereum mainnet with the same schema as ethereum.json but scoped to the original V2 contract deployment.
+
+        '
+      tags:
+      - V2 Protocol Stats
+      responses:
+        '200':
+          description: Ethereum mainnet legacy V2 protocol stats.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProtocolStats'
+  /v2/testnet/sepolia.json:
+    get:
+      operationId: getSepoliaTestnetStats
+      summary: Sepolia Testnet Stats
+      description: Returns V2 protocol stats for the Sepolia testnet deployment.
+      tags:
+      - V2 Protocol Stats
+      responses:
+        '200':
+          description: Sepolia testnet V2 protocol stats.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProtocolStats'
+components:
+  schemas:
+    BranchStats:
+      type: object
+      description: Per-collateral branch statistics for a Liquity V2 deployment.
+      properties:
+        coll_active:
+          type: string
+          description: Active collateral amount as numeric string.
+        coll_default:
+          type: string
+          description: Defaulted collateral amount as numeric string.
+        coll_price:
+          type: string
+          description: Current collateral price as numeric string.
+        debt_recorded:
+          type: string
+          description: Recorded debt amount as numeric string.
+        debt_default:
+          type: string
+          description: Defaulted debt amount as numeric string.
+        sp_deposits:
+          type: string
+          description: Stability pool deposit amount as numeric string.
+        interest_accrual_1y:
+          type: string
+          description: Annualized interest accrual as numeric string.
+        interest_pending:
+          type: string
+          description: Pending interest amount as numeric string.
+        batch_management_fees_pending:
+          type: string
+          description: Pending batch management fees as numeric string.
+        coll:
+          type: string
+          description: Total collateral as numeric string.
+        coll_value:
+          type: string
+          description: Total collateral value in USD as numeric string.
+        debt_pending:
+          type: string
+          description: Pending debt as numeric string.
+        debt_active:
+          type: string
+          description: Active debt as numeric string.
+        debt:
+          type: string
+          description: Total debt as numeric string.
+        value_locked:
+          type: string
+          description: Total value locked as numeric string.
+        interest_rate_avg:
+          type: string
+          description: Average interest rate as numeric string.
+        sp_apy:
+          type: string
+          description: Stability pool APY as numeric string.
+        apy_avg:
+          type: string
+          description: Average APY as numeric string.
+        sp_apy_avg_1d:
+          type: string
+          description: 1-day average stability pool APY as numeric string.
+        sp_apy_avg_7d:
+          type: string
+          description: 7-day average stability pool APY as numeric string.
+    ProtocolStats:
+      type: object
+      description: Comprehensive Liquity V2 (BOLD) protocol statistics snapshot.
+      properties:
+        total_bold_supply:
+          type: string
+          description: Total BOLD stablecoin supply as numeric string.
+        total_debt_pending:
+          type: string
+          description: Total pending debt across all branches as numeric string.
+        total_coll_value:
+          type: string
+          description: Total collateral value in USD as numeric string.
+        total_sp_deposits:
+          type: string
+          description: Total stability pool deposits as numeric string.
+        total_value_locked:
+          type: string
+          description: Total value locked in the protocol as numeric string.
+        max_sp_apy:
+          type: string
+          description: Maximum stability pool APY across all branches as numeric string.
+        branch:
+          type: object
+          description: Per-collateral branch statistics keyed by asset name (e.g., WETH, wstETH, rETH).
+          additionalProperties:
+            $ref: '#/components/schemas/BranchStats'
+        boldYield:
+          type: array
+          description: List of BOLD yield opportunities.
+          items:
+            $ref: '#/components/schemas/YieldVenue'
+        sBOLD:
+          $ref: '#/components/schemas/YieldVenue'
+        yBOLD:
+          $ref: '#/components/schemas/YieldVenue'
+        prices:
+          type: object
+          description: Current token prices keyed by symbol.
+          additionalProperties:
+            type: string
+            description: Token price as numeric string.
+    YieldVenue:
+      type: object
+      description: A yield opportunity for BOLD in a DeFi protocol.
+      properties:
+        protocol:
+          type: string
+          description: Name of the DeFi protocol.
+          example: Euler
+        asset:
+          type: string
+          description: Asset or vault identifier.
+          example: BOLD Vault
+        link:
+          type: string
+          format: uri
+          description: URL to access the yield opportunity.
+          example: https://app.euler.finance/vault/0xC1C51C5c9EfaF0c485Aa1097AE9690B5e102975A
+        weekly_apr:
+          type: number
+          description: Weekly annualized percentage rate as decimal.
+          example: 0.10333863505351129
+        total_apr:
+          type: string
+          description: Range of total APR as formatted string.
+          example: 21.5% - 103.1%
+        tvl:
+          type: number
+          description: Total value locked in USD.
+          example: 148921.61027224179
+      required:
+      - protocol
+      - asset
+      - link
+      - weekly_apr
+      - total_apr
+      - tvl
+externalDocs:
+  description: Liquity API GitHub Repository
+  url: https://github.com/liquity/api.liquity.org
