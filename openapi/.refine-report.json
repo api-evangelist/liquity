@@ -1,0 +1,20 @@
+{
+  "provider": "liquity",
+  "sources": [
+    "liquity-v1-supply-api-openapi.yml",
+    "liquity-v2-governance-api-openapi.yml",
+    "liquity-v2-protocol-stats-api-openapi.yml",
+    "liquity-v2-website-data-api-openapi.yml"
+  ],
+  "outputs": [
+    "liquity-v1-supply-api-openapi.yml",
+    "liquity-v2-governance-api-openapi.yml",
+    "liquity-v2-protocol-stats-api-openapi.yml",
+    "liquity-v2-website-data-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
