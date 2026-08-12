@@ -219,6 +219,11 @@ apis:
   - type: Documentation
     url: https://github.com/liquity/api.liquity.org
 common:
+  - type: IssueTracker
+    url: https://github.com/liquity/V2-gov/issues
+  - type: License
+    name: MIT
+    url: https://github.com/liquity/V2-gov/blob/main/LICENSE
   - type: AgenticAccess
     url: agentic-access/liquity-agentic-access.yml
   - type: DomainSecurity
