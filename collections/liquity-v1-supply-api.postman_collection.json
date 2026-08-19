@@ -1,0 +1,248 @@
+{
+  "item": [
+    {
+      "id": "5ced20e5-3f9e-4403-bb5c-a3c1c7d31a2f",
+      "name": "V1 Supply",
+      "description": {
+        "content": "Liquity V1 circulating supply and BAMM stats endpoints.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2d8ad53d-c941-4b7d-b684-e9d4258a6397",
+          "name": "LUSD Total Supply",
+          "request": {
+            "name": "LUSD Total Supply",
+            "description": {
+              "content": "Returns the current total supply of LUSD stablecoin as a plaintext decimal number, derived from on-chain contract state via Ethers.js.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "lusd_total_supply.txt"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d1ebea9a-3c1c-49a0-ac98-57d69b33477a",
+              "name": "LUSD total supply as a plaintext number.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "lusd_total_supply.txt"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "142857123456789000000000000",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "57a290a1-10ab-4edf-bfac-43d04bad4ec0",
+          "name": "LQTY Circulating Supply",
+          "request": {
+            "name": "LQTY Circulating Supply",
+            "description": {
+              "content": "Returns the current circulating supply of LQTY governance token as a plaintext decimal number.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "lqty_circulating_supply.txt"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b45d1bea-d4b0-4b9d-ad34-e0cf95af86d4",
+              "name": "LQTY circulating supply as a plaintext number.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "lqty_circulating_supply.txt"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "85000000000000000000000000",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a666b04e-3115-4eb3-84ee-cec34d1ac2bf",
+          "name": "LUSD Chicken Bonds BAMM Stats",
+          "request": {
+            "name": "LUSD Chicken Bonds BAMM Stats",
+            "description": {
+              "content": "Returns JSON with BAMM (B.AMM) debt and 7-day, 14-day, and 30-day APR figures for the LUSD Chicken Bonds stability pool integration with B.Protocol.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "lusd_cb_bamm_stats.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5575c79c-dc0a-4baf-b2fe-8d20b408e8aa",
+              "name": "LUSD Chicken Bonds BAMM statistics.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "lusd_cb_bamm_stats.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"timestamp\": \"2025-08-29T05:00:00Z\",\n  \"bamm_debt\": 1525216.022184752,\n  \"bamm_apr_7d\": 0,\n  \"bamm_apr_14d\": 0,\n  \"bamm_apr_30d\": 0\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.liquity.org",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "ef6edd3b-5c45-485a-9fe4-2f960f12e9b9",
+    "name": "Liquity Protocol V1 Supply API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Liquity static JSON API at api.liquity.org covers circulating supplies, protocol stats, stability pool data, prices, governance epochs, yield opportunities, borrow rates, and a points leaderboard. Data is generated on-chain and published as flat files to GitHub Pages. Liquity V1 issues LUSD stablecoin backed by ETH. Liquity V2 (BOLD) supports multi-collateral borrowing with WETH, wstETH, and rETH.\n\n\nContact Support:\n Name: Liquity Team",
+      "type": "text/plain"
+    }
+  }
+}

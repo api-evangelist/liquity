@@ -1,0 +1,51 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Liquity Protocol V1 Supply API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "V1 Supply",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "LUSD Total Supply",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.liquity.org/v1/lusd_total_supply.txt"
+          },
+          "docs": "Returns the current total supply of LUSD stablecoin as a plaintext decimal number, derived from on-chain contract state via Ethers.js.\n"
+        },
+        {
+          "info": {
+            "name": "LQTY Circulating Supply",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.liquity.org/v1/lqty_circulating_supply.txt"
+          },
+          "docs": "Returns the current circulating supply of LQTY governance token as a plaintext decimal number.\n"
+        },
+        {
+          "info": {
+            "name": "LUSD Chicken Bonds BAMM Stats",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.liquity.org/v1/lusd_cb_bamm_stats.json"
+          },
+          "docs": "Returns JSON with BAMM (B.AMM) debt and 7-day, 14-day, and 30-day APR figures for the LUSD Chicken Bonds stability pool integration with B.Protocol.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,62 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Liquity Protocol V1 Supply V2 Website Data API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "V2 Website Data",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "BOLD Yield Venues",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.liquity.org/v2/website/bold-venues.json"
+          },
+          "docs": "Returns an array of yield opportunities for BOLD across DeFi protocols (e.g., Euler, Yearn, Asymmetry). Each entry includes protocol name, asset/vault name, link, weekly APR, total APR range, and TVL.\n"
+        },
+        {
+          "info": {
+            "name": "Fork Venues",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.liquity.org/v2/website/fork-venues.json"
+          },
+          "docs": "Returns data on Liquity protocol fork deployments and venues."
+        },
+        {
+          "info": {
+            "name": "Points Leaderboard",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.liquity.org/v2/website/leaderboard.json"
+          },
+          "docs": "Returns a ranked leaderboard of Ethereum addresses by accumulated Liquity points, including rank, address, points earned, and percentage share. Contains up to 1,900+ entries.\n"
+        },
+        {
+          "info": {
+            "name": "Borrow Rates Comparison",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.liquity.org/v2/website/borrow-rates.json"
+          },
+          "docs": "Returns average borrow rate comparison per collateral type (WETH, wstETH, rETH) between Liquity V2 and DeFi-wide averages.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

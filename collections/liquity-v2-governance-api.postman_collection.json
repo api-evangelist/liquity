@@ -1,0 +1,180 @@
+{
+  "item": [
+    {
+      "id": "732eafd7-0d6d-475d-a98a-eaffdd559ff8",
+      "name": "V2 Governance",
+      "description": {
+        "content": "Liquity V2 governance state including initiatives and epoch data.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "970eaf74-3b63-4eb7-acbb-0fe22b59b2ed",
+          "name": "Governance Initiatives",
+          "request": {
+            "name": "Governance Initiatives",
+            "description": {
+              "content": "Returns a mapping of Ethereum addresses to governance initiative metadata, including whether each address is a bribe initiative and the associated bribe token address (or null).\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "governance",
+                "initiatives.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "813e5176-4e24-4572-9b12-a4900cc33fae",
+              "name": "Map of governance initiative addresses to metadata.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "governance",
+                    "initiatives.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"0xD533a949740bb3306d119CC777fa900bA034cd52\": {\n    \"isBribeInitiative\": true,\n    \"bribeToken\": \"0xD533a949740bb3306d119CC777fa900bA034cd52\"\n  },\n  \"0x1234567890abcdef1234567890abcdef12345678\": {\n    \"isBribeInitiative\": false,\n    \"bribeToken\": null\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1d5ae318-cc5f-4bd7-a355-66d8a411b3ac",
+          "name": "Latest Completed Epoch",
+          "request": {
+            "name": "Latest Completed Epoch",
+            "description": {
+              "content": "Returns the index number of the most recently completed governance epoch as a plain integer. Epoch cadence is weekly starting from epoch start timestamp 1746662400.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "governance",
+                "latest_completed_epoch.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f77bceed-2232-4904-9bea-d13b678958d6",
+              "name": "Latest completed governance epoch index.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "governance",
+                    "latest_completed_epoch.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "57",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.liquity.org",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "5e6d2bd3-3d95-4509-b1e4-a0c30f2e899f",
+    "name": "Liquity Protocol V1 Supply V2 Governance API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Liquity static JSON API at api.liquity.org covers circulating supplies, protocol stats, stability pool data, prices, governance epochs, yield opportunities, borrow rates, and a points leaderboard. Data is generated on-chain and published as flat files to GitHub Pages. Liquity V1 issues LUSD stablecoin backed by ETH. Liquity V2 (BOLD) supports multi-collateral borrowing with WETH, wstETH, and rETH.\n\n\nContact Support:\n Name: Liquity Team",
+      "type": "text/plain"
+    }
+  }
+}

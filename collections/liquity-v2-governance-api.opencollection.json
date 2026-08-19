@@ -1,0 +1,40 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Liquity Protocol V1 Supply V2 Governance API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "V2 Governance",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Governance Initiatives",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.liquity.org/v2/governance/initiatives.json"
+          },
+          "docs": "Returns a mapping of Ethereum addresses to governance initiative metadata, including whether each address is a bribe initiative and the associated bribe token address (or null).\n"
+        },
+        {
+          "info": {
+            "name": "Latest Completed Epoch",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.liquity.org/v2/governance/latest_completed_epoch.json"
+          },
+          "docs": "Returns the index number of the most recently completed governance epoch as a plain integer. Epoch cadence is weekly starting from epoch start timestamp 1746662400.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

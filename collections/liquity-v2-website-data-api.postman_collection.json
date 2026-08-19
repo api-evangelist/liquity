@@ -1,0 +1,328 @@
+{
+  "item": [
+    {
+      "id": "74978d10-0479-4d4e-9656-e5566b1e186c",
+      "name": "V2 Website Data",
+      "description": {
+        "content": "Data feeds for the Liquity website including yield venues, leaderboard, and borrow rates.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6b716bf8-19cd-4ac7-bab9-89942f735aca",
+          "name": "BOLD Yield Venues",
+          "request": {
+            "name": "BOLD Yield Venues",
+            "description": {
+              "content": "Returns an array of yield opportunities for BOLD across DeFi protocols (e.g., Euler, Yearn, Asymmetry). Each entry includes protocol name, asset/vault name, link, weekly APR, total APR range, and TVL.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "website",
+                "bold-venues.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "01942375-ce8a-4275-9a2e-d1efac640487",
+              "name": "List of BOLD yield opportunities.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "website",
+                    "bold-venues.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"protocol\": \"Euler\",\n    \"asset\": \"BOLD Vault\",\n    \"link\": \"https://app.euler.finance/vault/0xC1C51C5c9EfaF0c485Aa1097AE9690B5e102975A\",\n    \"weekly_apr\": 0.10333863505351129,\n    \"total_apr\": \"21.5% - 103.1%\",\n    \"tvl\": 148921.61027224179\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e62bacdf-b870-49eb-aba0-3c579302759b",
+          "name": "Fork Venues",
+          "request": {
+            "name": "Fork Venues",
+            "description": {
+              "content": "Returns data on Liquity protocol fork deployments and venues.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "website",
+                "fork-venues.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "679892e6-0383-4115-9fe1-0b3a1986ba5b",
+              "name": "List of Liquity protocol fork venues.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "website",
+                    "fork-venues.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"protocol\": \"Euler\",\n    \"asset\": \"BOLD Vault\",\n    \"link\": \"https://app.euler.finance/vault/0xC1C51C5c9EfaF0c485Aa1097AE9690B5e102975A\",\n    \"weekly_apr\": 0.10333863505351129,\n    \"total_apr\": \"21.5% - 103.1%\",\n    \"tvl\": 148921.61027224179\n  },\n  {\n    \"protocol\": \"Euler\",\n    \"asset\": \"BOLD Vault\",\n    \"link\": \"https://app.euler.finance/vault/0xC1C51C5c9EfaF0c485Aa1097AE9690B5e102975A\",\n    \"weekly_apr\": 0.10333863505351129,\n    \"total_apr\": \"21.5% - 103.1%\",\n    \"tvl\": 148921.61027224179\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "61a750a4-5708-4f6e-9578-5a0d484e690c",
+          "name": "Points Leaderboard",
+          "request": {
+            "name": "Points Leaderboard",
+            "description": {
+              "content": "Returns a ranked leaderboard of Ethereum addresses by accumulated Liquity points, including rank, address, points earned, and percentage share. Contains up to 1,900+ entries.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "website",
+                "leaderboard.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9bf172b9-08bf-4d94-ae61-035b1b8c83dd",
+              "name": "Points leaderboard with ranked Ethereum addresses.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "website",
+                    "leaderboard.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"total_row_count\": 1907,\n  \"rows\": [\n    {\n      \"rank\": 1,\n      \"address\": \"0xc83aa8e0da4ffc388fdbfc1cb111d8d625b5b8e7\",\n      \"points\": 632014.0793235414,\n      \"percent\": 0.05085206108535175\n    },\n    {\n      \"rank\": 2,\n      \"address\": \"0xceb63486c7ec2896b399e2d967c567d8c05f673a\",\n      \"points\": 451653.63560210326,\n      \"percent\": 0.036340200350666235\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "37883034-0606-4545-8243-c5af45ada733",
+          "name": "Borrow Rates Comparison",
+          "request": {
+            "name": "Borrow Rates Comparison",
+            "description": {
+              "content": "Returns average borrow rate comparison per collateral type (WETH, wstETH, rETH) between Liquity V2 and DeFi-wide averages.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "website",
+                "borrow-rates.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a7ccb815-850e-4b55-95cf-af3bf5abb1b7",
+              "name": "Borrow rate comparison by collateral type.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "website",
+                    "borrow-rates.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"collateral\": \"WETH\",\n    \"defi_avg_borrow_rate\": 0.04535838926497226,\n    \"liquity_avg_borrow_rate\": 0.022137661065511436\n  },\n  {\n    \"collateral\": \"wstETH\",\n    \"defi_avg_borrow_rate\": 0.039,\n    \"liquity_avg_borrow_rate\": 0.018\n  },\n  {\n    \"collateral\": \"rETH\",\n    \"defi_avg_borrow_rate\": 0.041,\n    \"liquity_avg_borrow_rate\": 0.019\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.liquity.org",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "9495e827-b76f-4a8f-9b87-fc9d6f60867a",
+    "name": "Liquity Protocol V1 Supply V2 Website Data API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Liquity static JSON API at api.liquity.org covers circulating supplies, protocol stats, stability pool data, prices, governance epochs, yield opportunities, borrow rates, and a points leaderboard. Data is generated on-chain and published as flat files to GitHub Pages. Liquity V1 issues LUSD stablecoin backed by ETH. Liquity V2 (BOLD) supports multi-collateral borrowing with WETH, wstETH, and rETH.\n\n\nContact Support:\n Name: Liquity Team",
+      "type": "text/plain"
+    }
+  }
+}

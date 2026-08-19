@@ -1,0 +1,51 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Liquity Protocol V1 Supply V2 Protocol Stats API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "V2 Protocol Stats",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Ethereum Protocol Stats",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.liquity.org/v2/ethereum.json"
+          },
+          "docs": "Returns comprehensive V2 (BOLD) protocol stats for Ethereum mainnet including total_bold_supply, total_debt_pending, total_coll_value, total_sp_deposits, total_value_locked, max_sp_apy, per-collateral branch data (WETH, wstETH, rETH), sBOLD and yBOLD vault metrics, boldYield opportunities, and current token prices.\n"
+        },
+        {
+          "info": {
+            "name": "Mainnet Legacy Protocol Stats",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.liquity.org/v2/mainnet.json"
+          },
+          "docs": "Returns V2 legacy deployment stats for Ethereum mainnet with the same schema as ethereum.json but scoped to the original V2 contract deployment.\n"
+        },
+        {
+          "info": {
+            "name": "Sepolia Testnet Stats",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.liquity.org/v2/testnet/sepolia.json"
+          },
+          "docs": "Returns V2 protocol stats for the Sepolia testnet deployment."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

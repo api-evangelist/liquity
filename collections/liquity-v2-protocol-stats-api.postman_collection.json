@@ -1,0 +1,250 @@
+{
+  "item": [
+    {
+      "id": "2599f1a4-e845-4b04-ba6a-d73d0127bd29",
+      "name": "V2 Protocol Stats",
+      "description": {
+        "content": "Liquity V2 (BOLD) protocol state snapshots for mainnet and testnet.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "86511f37-bce0-4ad5-a8e0-e94e6d963475",
+          "name": "Ethereum Protocol Stats",
+          "request": {
+            "name": "Ethereum Protocol Stats",
+            "description": {
+              "content": "Returns comprehensive V2 (BOLD) protocol stats for Ethereum mainnet including total_bold_supply, total_debt_pending, total_coll_value, total_sp_deposits, total_value_locked, max_sp_apy, per-collateral branch data (WETH, wstETH, rETH), sBOLD and yBOLD vault metrics, boldYield opportunities, and current token prices.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "ethereum.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f3198921-cb74-459c-84a2-20d87b85db56",
+              "name": "Ethereum mainnet V2 protocol stats.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "ethereum.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"total_bold_supply\": \"string\",\n  \"total_debt_pending\": \"string\",\n  \"total_coll_value\": \"string\",\n  \"total_sp_deposits\": \"string\",\n  \"total_value_locked\": \"string\",\n  \"max_sp_apy\": \"string\",\n  \"branch\": {\n    \"key_0\": {\n      \"coll_active\": \"string\",\n      \"coll_default\": \"string\",\n      \"coll_price\": \"string\",\n      \"debt_recorded\": \"string\",\n      \"debt_default\": \"string\",\n      \"sp_deposits\": \"string\",\n      \"interest_accrual_1y\": \"string\",\n      \"interest_pending\": \"string\",\n      \"batch_management_fees_pending\": \"string\",\n      \"coll\": \"string\",\n      \"coll_value\": \"string\",\n      \"debt_pending\": \"string\",\n      \"debt_active\": \"string\",\n      \"debt\": \"string\",\n      \"value_locked\": \"string\",\n      \"interest_rate_avg\": \"string\",\n      \"sp_apy\": \"string\",\n      \"apy_avg\": \"string\",\n      \"sp_apy_avg_1d\": \"string\",\n      \"sp_apy_avg_7d\": \"string\"\n    }\n  },\n  \"boldYield\": [\n    {\n      \"protocol\": \"Euler\",\n      \"asset\": \"BOLD Vault\",\n      \"link\": \"https://app.euler.finance/vault/0xC1C51C5c9EfaF0c485Aa1097AE9690B5e102975A\",\n      \"weekly_apr\": 0.10333863505351129,\n      \"total_apr\": \"21.5% - 103.1%\",\n      \"tvl\": 148921.61027224179\n    },\n    {\n      \"protocol\": \"Euler\",\n      \"asset\": \"BOLD Vault\",\n      \"link\": \"https://app.euler.finance/vault/0xC1C51C5c9EfaF0c485Aa1097AE9690B5e102975A\",\n      \"weekly_apr\": 0.10333863505351129,\n      \"total_apr\": \"21.5% - 103.1%\",\n      \"tvl\": 148921.61027224179\n    }\n  ],\n  \"sBOLD\": {\n    \"protocol\": \"Euler\",\n    \"asset\": \"BOLD Vault\",\n    \"link\": \"https://app.euler.finance/vault/0xC1C51C5c9EfaF0c485Aa1097AE9690B5e102975A\",\n    \"weekly_apr\": 0.10333863505351129,\n    \"total_apr\": \"21.5% - 103.1%\",\n    \"tvl\": 148921.61027224179\n  },\n  \"yBOLD\": {\n    \"protocol\": \"Euler\",\n    \"asset\": \"BOLD Vault\",\n    \"link\": \"https://app.euler.finance/vault/0xC1C51C5c9EfaF0c485Aa1097AE9690B5e102975A\",\n    \"weekly_apr\": 0.10333863505351129,\n    \"total_apr\": \"21.5% - 103.1%\",\n    \"tvl\": 148921.61027224179\n  },\n  \"prices\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\",\n    \"key_2\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ce26e591-3955-4aa6-a71d-5149083ecb94",
+          "name": "Mainnet Legacy Protocol Stats",
+          "request": {
+            "name": "Mainnet Legacy Protocol Stats",
+            "description": {
+              "content": "Returns V2 legacy deployment stats for Ethereum mainnet with the same schema as ethereum.json but scoped to the original V2 contract deployment.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "mainnet.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c7b274f6-2ba7-4807-9bed-8e1614ec6250",
+              "name": "Ethereum mainnet legacy V2 protocol stats.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "mainnet.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"total_bold_supply\": \"string\",\n  \"total_debt_pending\": \"string\",\n  \"total_coll_value\": \"string\",\n  \"total_sp_deposits\": \"string\",\n  \"total_value_locked\": \"string\",\n  \"max_sp_apy\": \"string\",\n  \"branch\": {\n    \"key_0\": {\n      \"coll_active\": \"string\",\n      \"coll_default\": \"string\",\n      \"coll_price\": \"string\",\n      \"debt_recorded\": \"string\",\n      \"debt_default\": \"string\",\n      \"sp_deposits\": \"string\",\n      \"interest_accrual_1y\": \"string\",\n      \"interest_pending\": \"string\",\n      \"batch_management_fees_pending\": \"string\",\n      \"coll\": \"string\",\n      \"coll_value\": \"string\",\n      \"debt_pending\": \"string\",\n      \"debt_active\": \"string\",\n      \"debt\": \"string\",\n      \"value_locked\": \"string\",\n      \"interest_rate_avg\": \"string\",\n      \"sp_apy\": \"string\",\n      \"apy_avg\": \"string\",\n      \"sp_apy_avg_1d\": \"string\",\n      \"sp_apy_avg_7d\": \"string\"\n    }\n  },\n  \"boldYield\": [\n    {\n      \"protocol\": \"Euler\",\n      \"asset\": \"BOLD Vault\",\n      \"link\": \"https://app.euler.finance/vault/0xC1C51C5c9EfaF0c485Aa1097AE9690B5e102975A\",\n      \"weekly_apr\": 0.10333863505351129,\n      \"total_apr\": \"21.5% - 103.1%\",\n      \"tvl\": 148921.61027224179\n    },\n    {\n      \"protocol\": \"Euler\",\n      \"asset\": \"BOLD Vault\",\n      \"link\": \"https://app.euler.finance/vault/0xC1C51C5c9EfaF0c485Aa1097AE9690B5e102975A\",\n      \"weekly_apr\": 0.10333863505351129,\n      \"total_apr\": \"21.5% - 103.1%\",\n      \"tvl\": 148921.61027224179\n    }\n  ],\n  \"sBOLD\": {\n    \"protocol\": \"Euler\",\n    \"asset\": \"BOLD Vault\",\n    \"link\": \"https://app.euler.finance/vault/0xC1C51C5c9EfaF0c485Aa1097AE9690B5e102975A\",\n    \"weekly_apr\": 0.10333863505351129,\n    \"total_apr\": \"21.5% - 103.1%\",\n    \"tvl\": 148921.61027224179\n  },\n  \"yBOLD\": {\n    \"protocol\": \"Euler\",\n    \"asset\": \"BOLD Vault\",\n    \"link\": \"https://app.euler.finance/vault/0xC1C51C5c9EfaF0c485Aa1097AE9690B5e102975A\",\n    \"weekly_apr\": 0.10333863505351129,\n    \"total_apr\": \"21.5% - 103.1%\",\n    \"tvl\": 148921.61027224179\n  },\n  \"prices\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\",\n    \"key_2\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4aed7ced-5e26-4348-be85-027eea0e23fe",
+          "name": "Sepolia Testnet Stats",
+          "request": {
+            "name": "Sepolia Testnet Stats",
+            "description": {
+              "content": "Returns V2 protocol stats for the Sepolia testnet deployment.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "testnet",
+                "sepolia.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f76a7dae-0f52-4e44-9625-2038a642f9f8",
+              "name": "Sepolia testnet V2 protocol stats.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "testnet",
+                    "sepolia.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"total_bold_supply\": \"string\",\n  \"total_debt_pending\": \"string\",\n  \"total_coll_value\": \"string\",\n  \"total_sp_deposits\": \"string\",\n  \"total_value_locked\": \"string\",\n  \"max_sp_apy\": \"string\",\n  \"branch\": {\n    \"key_0\": {\n      \"coll_active\": \"string\",\n      \"coll_default\": \"string\",\n      \"coll_price\": \"string\",\n      \"debt_recorded\": \"string\",\n      \"debt_default\": \"string\",\n      \"sp_deposits\": \"string\",\n      \"interest_accrual_1y\": \"string\",\n      \"interest_pending\": \"string\",\n      \"batch_management_fees_pending\": \"string\",\n      \"coll\": \"string\",\n      \"coll_value\": \"string\",\n      \"debt_pending\": \"string\",\n      \"debt_active\": \"string\",\n      \"debt\": \"string\",\n      \"value_locked\": \"string\",\n      \"interest_rate_avg\": \"string\",\n      \"sp_apy\": \"string\",\n      \"apy_avg\": \"string\",\n      \"sp_apy_avg_1d\": \"string\",\n      \"sp_apy_avg_7d\": \"string\"\n    }\n  },\n  \"boldYield\": [\n    {\n      \"protocol\": \"Euler\",\n      \"asset\": \"BOLD Vault\",\n      \"link\": \"https://app.euler.finance/vault/0xC1C51C5c9EfaF0c485Aa1097AE9690B5e102975A\",\n      \"weekly_apr\": 0.10333863505351129,\n      \"total_apr\": \"21.5% - 103.1%\",\n      \"tvl\": 148921.61027224179\n    },\n    {\n      \"protocol\": \"Euler\",\n      \"asset\": \"BOLD Vault\",\n      \"link\": \"https://app.euler.finance/vault/0xC1C51C5c9EfaF0c485Aa1097AE9690B5e102975A\",\n      \"weekly_apr\": 0.10333863505351129,\n      \"total_apr\": \"21.5% - 103.1%\",\n      \"tvl\": 148921.61027224179\n    }\n  ],\n  \"sBOLD\": {\n    \"protocol\": \"Euler\",\n    \"asset\": \"BOLD Vault\",\n    \"link\": \"https://app.euler.finance/vault/0xC1C51C5c9EfaF0c485Aa1097AE9690B5e102975A\",\n    \"weekly_apr\": 0.10333863505351129,\n    \"total_apr\": \"21.5% - 103.1%\",\n    \"tvl\": 148921.61027224179\n  },\n  \"yBOLD\": {\n    \"protocol\": \"Euler\",\n    \"asset\": \"BOLD Vault\",\n    \"link\": \"https://app.euler.finance/vault/0xC1C51C5c9EfaF0c485Aa1097AE9690B5e102975A\",\n    \"weekly_apr\": 0.10333863505351129,\n    \"total_apr\": \"21.5% - 103.1%\",\n    \"tvl\": 148921.61027224179\n  },\n  \"prices\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\",\n    \"key_2\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.liquity.org",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "e0e210ca-2b07-47b5-b93f-f9c7cdbc6c4b",
+    "name": "Liquity Protocol V1 Supply V2 Protocol Stats API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Liquity static JSON API at api.liquity.org covers circulating supplies, protocol stats, stability pool data, prices, governance epochs, yield opportunities, borrow rates, and a points leaderboard. Data is generated on-chain and published as flat files to GitHub Pages. Liquity V1 issues LUSD stablecoin backed by ETH. Liquity V2 (BOLD) supports multi-collateral borrowing with WETH, wstETH, and rETH.\n\n\nContact Support:\n Name: Liquity Team",
+      "type": "text/plain"
+    }
+  }
+}
