@@ -242,6 +242,8 @@ apis:
   - type: Documentation
     url: https://github.com/liquity/api.liquity.org
 common:
+  - type: Website
+    url: https://www.liquity.org/
   - type: IssueTracker
     url: https://github.com/liquity/V2-gov/issues
   - type: License
