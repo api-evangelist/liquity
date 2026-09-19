@@ -111,6 +111,12 @@ apis:
   - BOLD
   - Yield
   - Borrow Rates
+  - Leaderboards
+  - DeFi
+  tags_raw:
+  - BOLD
+  - Yield
+  - Borrow Rates
   - Leaderboard
   - DeFi
   properties:
