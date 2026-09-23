@@ -1,9 +1,7 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Liquity Protocol V1 Supply API
-  description: 'The Liquity static JSON API at api.liquity.org covers circulating supplies, protocol stats, stability pool data, prices, governance epochs, yield opportunities, borrow rates, and a points leaderboard. Data is generated on-chain and published as flat files to GitHub Pages. Liquity V1 issues LUSD stablecoin backed by ETH. Liquity V2 (BOLD) supports multi-collateral borrowing with WETH, wstETH, and rETH.
-
-    '
+  description: The Liquity static JSON API at api.liquity.org covers circulating supplies, protocol stats, stability pool data, prices, governance epochs, yield opportunities, borrow rates, and a points leaderboard. Data is generated on-chain and published as flat files to GitHub Pages. Liquity V1 issues LUSD stablecoin backed by ETH. Liquity V2 (BOLD) supports multi-collateral borrowing with WETH, wstETH, and rETH.
   version: 1.0.0
   contact:
     name: Liquity Team
@@ -23,9 +21,7 @@ paths:
     get:
       operationId: getLusdTotalSupply
       summary: LUSD Total Supply
-      description: 'Returns the current total supply of LUSD stablecoin as a plaintext decimal number, derived from on-chain contract state via Ethers.js.
-
-        '
+      description: Returns the current total supply of LUSD stablecoin as a plaintext decimal number, derived from on-chain contract state via Ethers.js.
       tags:
       - V1 Supply
       responses:
@@ -41,9 +37,7 @@ paths:
     get:
       operationId: getLqtyCirculatingSupply
       summary: LQTY Circulating Supply
-      description: 'Returns the current circulating supply of LQTY governance token as a plaintext decimal number.
-
-        '
+      description: Returns the current circulating supply of LQTY governance token as a plaintext decimal number.
       tags:
       - V1 Supply
       responses:
@@ -59,9 +53,7 @@ paths:
     get:
       operationId: getLusdChickenBondsBammStats
       summary: LUSD Chicken Bonds BAMM Stats
-      description: 'Returns JSON with BAMM (B.AMM) debt and 7-day, 14-day, and 30-day APR figures for the LUSD Chicken Bonds stability pool integration with B.Protocol.
-
-        '
+      description: Returns JSON with BAMM (B.AMM) debt and 7-day, 14-day, and 30-day APR figures for the LUSD Chicken Bonds stability pool integration with B.Protocol.
       tags:
       - V1 Supply
       responses:

@@ -1,9 +1,7 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Liquity Protocol V1 Supply V2 Website Data API
-  description: 'The Liquity static JSON API at api.liquity.org covers circulating supplies, protocol stats, stability pool data, prices, governance epochs, yield opportunities, borrow rates, and a points leaderboard. Data is generated on-chain and published as flat files to GitHub Pages. Liquity V1 issues LUSD stablecoin backed by ETH. Liquity V2 (BOLD) supports multi-collateral borrowing with WETH, wstETH, and rETH.
-
-    '
+  title: Liquity Protocol V2 Website Data API
+  description: The Liquity static JSON API at api.liquity.org covers circulating supplies, protocol stats, stability pool data, prices, governance epochs, yield opportunities, borrow rates, and a points leaderboard. Data is generated on-chain and published as flat files to GitHub Pages. Liquity V1 issues LUSD stablecoin backed by ETH. Liquity V2 (BOLD) supports multi-collateral borrowing with WETH, wstETH, and rETH.
   version: 1.0.0
   contact:
     name: Liquity Team
@@ -23,9 +21,7 @@ paths:
     get:
       operationId: getBoldYieldVenues
       summary: BOLD Yield Venues
-      description: 'Returns an array of yield opportunities for BOLD across DeFi protocols (e.g., Euler, Yearn, Asymmetry). Each entry includes protocol name, asset/vault name, link, weekly APR, total APR range, and TVL.
-
-        '
+      description: Returns an array of yield opportunities for BOLD across DeFi protocols (e.g., Euler, Yearn, Asymmetry). Each entry includes protocol name, asset/vault name, link, weekly APR, total APR range, and TVL.
       tags:
       - V2 Website Data
       responses:
@@ -64,9 +60,7 @@ paths:
     get:
       operationId: getPointsLeaderboard
       summary: Points Leaderboard
-      description: 'Returns a ranked leaderboard of Ethereum addresses by accumulated Liquity points, including rank, address, points earned, and percentage share. Contains up to 1,900+ entries.
-
-        '
+      description: Returns a ranked leaderboard of Ethereum addresses by accumulated Liquity points, including rank, address, points earned, and percentage share. Contains up to 1,900+ entries.
       tags:
       - V2 Website Data
       responses:
@@ -91,9 +85,7 @@ paths:
     get:
       operationId: getBorrowRatesComparison
       summary: Borrow Rates Comparison
-      description: 'Returns average borrow rate comparison per collateral type (WETH, wstETH, rETH) between Liquity V2 and DeFi-wide averages.
-
-        '
+      description: Returns average borrow rate comparison per collateral type (WETH, wstETH, rETH) between Liquity V2 and DeFi-wide averages.
       tags:
       - V2 Website Data
       responses:

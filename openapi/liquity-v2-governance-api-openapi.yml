@@ -1,9 +1,7 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Liquity Protocol V1 Supply V2 Governance API
-  description: 'The Liquity static JSON API at api.liquity.org covers circulating supplies, protocol stats, stability pool data, prices, governance epochs, yield opportunities, borrow rates, and a points leaderboard. Data is generated on-chain and published as flat files to GitHub Pages. Liquity V1 issues LUSD stablecoin backed by ETH. Liquity V2 (BOLD) supports multi-collateral borrowing with WETH, wstETH, and rETH.
-
-    '
+  title: Liquity Protocol V2 Governance API
+  description: The Liquity static JSON API at api.liquity.org covers circulating supplies, protocol stats, stability pool data, prices, governance epochs, yield opportunities, borrow rates, and a points leaderboard. Data is generated on-chain and published as flat files to GitHub Pages. Liquity V1 issues LUSD stablecoin backed by ETH. Liquity V2 (BOLD) supports multi-collateral borrowing with WETH, wstETH, and rETH.
   version: 1.0.0
   contact:
     name: Liquity Team
@@ -23,9 +21,7 @@ paths:
     get:
       operationId: getGovernanceInitiatives
       summary: Governance Initiatives
-      description: 'Returns a mapping of Ethereum addresses to governance initiative metadata, including whether each address is a bribe initiative and the associated bribe token address (or null).
-
-        '
+      description: Returns a mapping of Ethereum addresses to governance initiative metadata, including whether each address is a bribe initiative and the associated bribe token address (or null).
       tags:
       - V2 Governance
       responses:
@@ -48,9 +44,7 @@ paths:
     get:
       operationId: getLatestCompletedEpoch
       summary: Latest Completed Epoch
-      description: 'Returns the index number of the most recently completed governance epoch as a plain integer. Epoch cadence is weekly starting from epoch start timestamp 1746662400.
-
-        '
+      description: Returns the index number of the most recently completed governance epoch as a plain integer. Epoch cadence is weekly starting from epoch start timestamp 1746662400.
       tags:
       - V2 Governance
       responses:
