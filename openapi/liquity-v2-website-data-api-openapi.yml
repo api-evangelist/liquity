@@ -131,22 +131,6 @@ components:
       - collateral
       - defi_avg_borrow_rate
       - liquity_avg_borrow_rate
-    Leaderboard:
-      type: object
-      description: Paginated leaderboard of Ethereum addresses by Liquity points.
-      properties:
-        total_row_count:
-          type: integer
-          description: Total number of entries in the leaderboard.
-          example: 1907
-        rows:
-          type: array
-          items:
-            $ref: '#/components/schemas/LeaderboardEntry'
-          description: List of leaderboard entries.
-      required:
-      - total_row_count
-      - rows
     LeaderboardEntry:
       type: object
       description: A single entry in the Liquity points leaderboard.
@@ -172,6 +156,22 @@ components:
       - address
       - points
       - percent
+    Leaderboard:
+      type: object
+      description: Paginated leaderboard of Ethereum addresses by Liquity points.
+      properties:
+        total_row_count:
+          type: integer
+          description: Total number of entries in the leaderboard.
+          example: 1907
+        rows:
+          type: array
+          items:
+            $ref: '#/components/schemas/LeaderboardEntry'
+          description: List of leaderboard entries.
+      required:
+      - total_row_count
+      - rows
     YieldVenue:
       type: object
       description: A yield opportunity for BOLD in a DeFi protocol.

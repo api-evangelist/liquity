@@ -61,48 +61,6 @@ paths:
                 $ref: '#/components/schemas/ProtocolStats'
 components:
   schemas:
-    ProtocolStats:
-      type: object
-      description: Comprehensive Liquity V2 (BOLD) protocol statistics snapshot.
-      properties:
-        total_bold_supply:
-          type: string
-          description: Total BOLD stablecoin supply as numeric string.
-        total_debt_pending:
-          type: string
-          description: Total pending debt across all branches as numeric string.
-        total_coll_value:
-          type: string
-          description: Total collateral value in USD as numeric string.
-        total_sp_deposits:
-          type: string
-          description: Total stability pool deposits as numeric string.
-        total_value_locked:
-          type: string
-          description: Total value locked in the protocol as numeric string.
-        max_sp_apy:
-          type: string
-          description: Maximum stability pool APY across all branches as numeric string.
-        branch:
-          type: object
-          description: Per-collateral branch statistics keyed by asset name (e.g., WETH, wstETH, rETH).
-          additionalProperties:
-            $ref: '#/components/schemas/BranchStats'
-        boldYield:
-          type: array
-          description: List of BOLD yield opportunities.
-          items:
-            $ref: '#/components/schemas/YieldVenue'
-        sBOLD:
-          $ref: '#/components/schemas/YieldVenue'
-        yBOLD:
-          $ref: '#/components/schemas/YieldVenue'
-        prices:
-          type: object
-          description: Current token prices keyed by symbol.
-          additionalProperties:
-            type: string
-            description: Token price as numeric string.
     BranchStats:
       type: object
       description: Per-collateral branch statistics for a Liquity V2 deployment.
@@ -167,6 +125,48 @@ components:
         sp_apy_avg_7d:
           type: string
           description: 7-day average stability pool APY as numeric string.
+    ProtocolStats:
+      type: object
+      description: Comprehensive Liquity V2 (BOLD) protocol statistics snapshot.
+      properties:
+        total_bold_supply:
+          type: string
+          description: Total BOLD stablecoin supply as numeric string.
+        total_debt_pending:
+          type: string
+          description: Total pending debt across all branches as numeric string.
+        total_coll_value:
+          type: string
+          description: Total collateral value in USD as numeric string.
+        total_sp_deposits:
+          type: string
+          description: Total stability pool deposits as numeric string.
+        total_value_locked:
+          type: string
+          description: Total value locked in the protocol as numeric string.
+        max_sp_apy:
+          type: string
+          description: Maximum stability pool APY across all branches as numeric string.
+        branch:
+          type: object
+          description: Per-collateral branch statistics keyed by asset name (e.g., WETH, wstETH, rETH).
+          additionalProperties:
+            $ref: '#/components/schemas/BranchStats'
+        boldYield:
+          type: array
+          description: List of BOLD yield opportunities.
+          items:
+            $ref: '#/components/schemas/YieldVenue'
+        sBOLD:
+          $ref: '#/components/schemas/YieldVenue'
+        yBOLD:
+          $ref: '#/components/schemas/YieldVenue'
+        prices:
+          type: object
+          description: Current token prices keyed by symbol.
+          additionalProperties:
+            type: string
+            description: Token price as numeric string.
     YieldVenue:
       type: object
       description: A yield opportunity for BOLD in a DeFi protocol.
