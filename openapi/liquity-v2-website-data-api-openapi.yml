@@ -109,53 +109,6 @@ paths:
                 liquity_avg_borrow_rate: 0.019
 components:
   schemas:
-    BorrowRateComparison:
-      type: object
-      description: Borrow rate comparison between Liquity V2 and DeFi average for a collateral.
-      properties:
-        collateral:
-          type: string
-          description: Collateral token identifier (e.g., WETH, wstETH, rETH).
-          example: WETH
-        defi_avg_borrow_rate:
-          type: number
-          format: float
-          description: Average borrow rate across DeFi protocols as decimal.
-          example: 0.04535838926497226
-        liquity_avg_borrow_rate:
-          type: number
-          format: float
-          description: Average borrow rate on Liquity V2 as decimal.
-          example: 0.022137661065511436
-      required:
-      - collateral
-      - defi_avg_borrow_rate
-      - liquity_avg_borrow_rate
-    LeaderboardEntry:
-      type: object
-      description: A single entry in the Liquity points leaderboard.
-      properties:
-        rank:
-          type: integer
-          description: Leaderboard ranking position.
-          example: 1
-        address:
-          type: string
-          description: Ethereum wallet address.
-          example: '0xc83aa8e0da4ffc388fdbfc1cb111d8d625b5b8e7'
-        points:
-          type: number
-          description: Total Liquity points accumulated.
-          example: 632014.0793235414
-        percent:
-          type: number
-          description: Percentage share of total points (0-1 range).
-          example: 0.05085206108535175
-      required:
-      - rank
-      - address
-      - points
-      - percent
     Leaderboard:
       type: object
       description: Paginated leaderboard of Ethereum addresses by Liquity points.
@@ -208,6 +161,53 @@ components:
       - weekly_apr
       - total_apr
       - tvl
+    BorrowRateComparison:
+      type: object
+      description: Borrow rate comparison between Liquity V2 and DeFi average for a collateral.
+      properties:
+        collateral:
+          type: string
+          description: Collateral token identifier (e.g., WETH, wstETH, rETH).
+          example: WETH
+        defi_avg_borrow_rate:
+          type: number
+          format: float
+          description: Average borrow rate across DeFi protocols as decimal.
+          example: 0.04535838926497226
+        liquity_avg_borrow_rate:
+          type: number
+          format: float
+          description: Average borrow rate on Liquity V2 as decimal.
+          example: 0.022137661065511436
+      required:
+      - collateral
+      - defi_avg_borrow_rate
+      - liquity_avg_borrow_rate
+    LeaderboardEntry:
+      type: object
+      description: A single entry in the Liquity points leaderboard.
+      properties:
+        rank:
+          type: integer
+          description: Leaderboard ranking position.
+          example: 1
+        address:
+          type: string
+          description: Ethereum wallet address.
+          example: '0xc83aa8e0da4ffc388fdbfc1cb111d8d625b5b8e7'
+        points:
+          type: number
+          description: Total Liquity points accumulated.
+          example: 632014.0793235414
+        percent:
+          type: number
+          description: Percentage share of total points (0-1 range).
+          example: 0.05085206108535175
+      required:
+      - rank
+      - address
+      - points
+      - percent
 externalDocs:
   description: Liquity API GitHub Repository
   url: https://github.com/liquity/api.liquity.org
