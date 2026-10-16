@@ -2,6 +2,13 @@
   "repo": "liquity",
   "feeds": [
     {
+      "source": "https://www.liquity.org/blog",
+      "feed_url": "https://www.liquity.org/blog",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    },
+    {
       "source": "https://docs.liquity.org/",
       "feed_url": "https://docs.liquity.org/",
       "title": "",
@@ -9,7 +16,7 @@
       "method": "none"
     }
   ],
-  "fetched": "2026-10-03T12:30:02Z",
+  "fetched": "2026-10-10T13:15:00Z",
   "post_count": 0,
   "agent_pulled": "2026-06-27"
 }
