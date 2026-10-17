@@ -156,22 +156,6 @@ components:
       - address
       - points
       - percent
-    Leaderboard:
-      type: object
-      description: Paginated leaderboard of Ethereum addresses by Liquity points.
-      properties:
-        total_row_count:
-          type: integer
-          description: Total number of entries in the leaderboard.
-          example: 1907
-        rows:
-          type: array
-          items:
-            $ref: '#/components/schemas/LeaderboardEntry'
-          description: List of leaderboard entries.
-      required:
-      - total_row_count
-      - rows
     YieldVenue:
       type: object
       description: A yield opportunity for BOLD in a DeFi protocol.
@@ -208,6 +192,22 @@ components:
       - weekly_apr
       - total_apr
       - tvl
+    Leaderboard:
+      type: object
+      description: Paginated leaderboard of Ethereum addresses by Liquity points.
+      properties:
+        total_row_count:
+          type: integer
+          description: Total number of entries in the leaderboard.
+          example: 1907
+        rows:
+          type: array
+          items:
+            $ref: '#/components/schemas/LeaderboardEntry'
+          description: List of leaderboard entries.
+      required:
+      - total_row_count
+      - rows
 externalDocs:
   description: Liquity API GitHub Repository
   url: https://github.com/liquity/api.liquity.org
